@@ -1,10 +1,12 @@
 # simple-unPCKer-GUI
 An electron based UI for sPCK.exe
-
+## Install modules
 ```
-# Install modules
 npm install
-# Run
-electron .
-#done
 ```
+## Run
+```
+electron .
+```
+## Done
+
