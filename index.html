@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Simple unPCKer</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1><center>simple unPCKer</center></h1>
+      <div class="row">
+        <div class="input-group m-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupFileAddon01"
+              >Game Directory</span
+            >
+          </div>
+          <div class="custom-file">
+            <input
+              type="file"
+              class="custom-file-input"
+              id="directory"
+              aria-describedby="inputGroupFileAddon01"
+              webkitdirectory
+            />
+            <label class="custom-file-label" for="inputGroupFile01"
+              >Choose file</label
+            >
+          </div>
+        </div>
+        <div class="input-group m-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupFileAddon02"
+              >Save Directory</span
+            >
+          </div>
+          <div class="custom-file">
+            <input
+              type="file"
+              class="custom-file-input"
+              id="save-dir"
+              aria-describedby="inputGroupFileAddon02"
+              webkitdirectory
+            />
+            <label class="custom-file-label" for="inputGroupFile02"
+              >Choose file</label
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-3 mb-5"
+        style="float:right; position:absolute; bottom:0; right:0;"
+      >
+        <div class="mb-2">
+          <select name="Select a Pckv" id="selection">
+            <option value="null">Select a Pck</option>
+            <option value="\reportbugs\Bug.pck">Bug</option>
+            <option value="\building.pck">Building</option>
+            <option value="\configs.pck">Configs</option>
+            <option value="\facedata.pck">Facedata</option>
+            <option value="\gfx.pck">GFX</option>
+            <option value="\grasses.pck">Grasses</option>
+            <option value="\interfaces.pck">Interfaces</option>
+            <option value="\litmodels.pck">Litmodels</option>
+            <option value="\loddata.pck">Loddata</option>
+            <option value="\models.pck">Models</option>
+            <option value="\help\script.pck">Script</option>
+            <option value="\sfx.pck">SFX</option>
+            <option value="\shaders.pck">Shaders</option>
+            <option value="\surfaces.pck">Surfaces</option>
+            <option value="\textures.pck">Textures</option>
+            <option value="\trees.pck">Trees</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="unpck()">unPCK</button>
+        <button class="btn btn-primary" onclick="unpckall()">unPCK All</button>
+      </div>
+      <h3 style="text-align: center;">The chosen folder will open when the unPCKing is finished.</h3>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+
+      $('.custom-file input').change(function (e) {
+          var files = [];
+          for (var i = 0; i < $(this)[0].files.length; i++) {
+              files.push($(this)[0].files[i].name);
+          }
+          $(this).next('.custom-file-label').html(files.join(', '));
+      });
+      </script>
+    <script src="app.js"></script>
+  </body>
+</html>
